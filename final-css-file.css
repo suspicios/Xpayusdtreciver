@@ -1,0 +1,666 @@
+/* XPay Payment Gateway - Complete CSS Styles */
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+    color: #ffffff;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 28rem;
+    margin: 0 auto;
+}
+
+/* Logo Section */
+.logo-section {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.logo-x {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.logo-text {
+    font-size: 1.125rem;
+    letter-spacing: 0.1em;
+    opacity: 0.8;
+    margin-bottom: 0.5rem;
+}
+
+.slogan {
+    font-size: 0.875rem;
+    color: #fbbf24;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.sub-slogan {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    font-style: italic;
+}
+
+/* Payment Card */
+.payment-card {
+    background: linear-gradient(145deg, #111827, #1f2937);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    border: 1px solid #374151;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    backdrop-filter: blur(10px);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.header h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.network-text {
+    color: #9ca3af;
+    font-size: 0.875rem;
+}
+
+/* Input Groups */
+.input-group {
+    margin-bottom: 1rem;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #1f2937;
+    border: 1px solid #374151;
+    border-radius: 0.5rem;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #fbbf24;
+    box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.1);
+}
+
+.input-group input::placeholder {
+    color: #6b7280;
+}
+
+.error-message {
+    color: #ef4444;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    display: flex;
+    align-items: center;
+}
+
+.input-group input.error {
+    border-color: #ef4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+/* QR Code Section */
+.qr-section {
+    background: linear-gradient(145deg, #ffffff, #f8fafc);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    border: 2px solid #e5e7eb;
+}
+
+.qr-header {
+    text-align: center;
+    margin-bottom: 0.75rem;
+}
+
+.qr-header h3 {
+    color: #1f2937;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.qr-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.75rem;
+}
+
+.qr-image {
+    width: 10rem;
+    height: 10rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 0.5rem;
+}
+
+.qr-fallback {
+    width: 10rem;
+    height: 10rem;
+    background-color: #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b7280;
+    font-size: 0.75rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    border: 2px dashed #9ca3af;
+}
+
+.qr-info {
+    text-align: center;
+}
+
+.qr-info p {
+    color: #6b7280;
+    font-size: 0.75rem;
+    margin-bottom: 0.25rem;
+}
+
+.bold {
+    font-weight: 600;
+    color: #1f2937;
+}
+
+/* Wallet Section */
+.wallet-section {
+    margin-bottom: 1rem;
+}
+
+.wallet-label {
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.wallet-label svg {
+    margin-right: 0.5rem;
+}
+
+.wallet-input {
+    display: flex;
+    align-items: center;
+    background-color: #1f2937;
+    border: 1px solid #374151;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    transition: border-color 0.2s;
+}
+
+.wallet-input:hover {
+    border-color: #4b5563;
+}
+
+.wallet-input span {
+    flex: 1;
+    font-size: 0.875rem;
+    word-break: break-all;
+    font-family: 'Courier New', monospace;
+}
+
+.copy-btn {
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    margin-left: 0.5rem;
+    color: white;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    transition: all 0.2s;
+}
+
+.copy-btn:hover {
+    background-color: #374151;
+    transform: scale(1.05);
+}
+
+.copy-btn svg.text-green-400 {
+    color: #10b981;
+}
+
+/* Timer Section */
+.timer-section {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.timer-label {
+    color: #9ca3af;
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+}
+
+.timer {
+    font-family: 'Courier New', monospace;
+    font-size: 1.25rem;
+    color: #fbbf24;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(251, 191, 36, 0.3);
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    background: linear-gradient(145deg, #ffffff, #f8fafc);
+    color: black;
+    font-weight: 600;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.submit-btn:hover:not(:disabled) {
+    background: linear-gradient(145deg, #e5e7eb, #d1d5db);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.submit-btn:disabled {
+    background: linear-gradient(145deg, #4b5563, #374151);
+    color: #9ca3af;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Warning Section */
+.warning {
+    display: flex;
+    align-items: flex-start;
+    background: linear-gradient(145deg, rgba(180, 83, 9, 0.2), rgba(180, 83, 9, 0.1));
+    border: 1px solid #d97706;
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    backdrop-filter: blur(5px);
+}
+
+.warning svg {
+    color: #fbbf24;
+    margin-top: 0.125rem;
+    margin-right: 0.5rem;
+    flex-shrink: 0;
+}
+
+.warning-text {
+    font-size: 0.75rem;
+    color: #fef3c7;
+}
+
+.warning-text p {
+    margin-bottom: 0.25rem;
+}
+
+/* Status Sections */
+.status-section {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.spinner {
+    width: 4rem;
+    height: 4rem;
+    border: 4px solid #374151;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    animation: spin 1s linear infinite;
+}
+
+.yellow-spinner {
+    border-top-color: #fbbf24;
+    box-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
+}
+
+.status-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.yellow {
+    color: #fbbf24;
+}
+
+.green {
+    color: #10b981;
+}
+
+.status-desc {
+    color: #9ca3af;
+    margin-bottom: 1rem;
+}
+
+/* Status Info */
+.status-info {
+    background: linear-gradient(145deg, #1f2937, #111827);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #374151;
+}
+
+.wait-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}
+
+.pulse-dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: #fbbf24;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    box-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+}
+
+.wait-text {
+    color: #fde047;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.wait-desc {
+    color: #9ca3af;
+    font-size: 0.75rem;
+}
+
+/* Details Card */
+.details-card {
+    background: linear-gradient(145deg, #1f2937, #111827);
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 0.75rem;
+    color: #6b7280;
+    border: 1px solid #374151;
+}
+
+.details-title {
+    color: #d1d5db;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.details-card p {
+    margin-bottom: 0.25rem;
+}
+
+/* Info Card */
+.info-card {
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    background: linear-gradient(145deg, rgba(30, 64, 175, 0.2), rgba(30, 64, 175, 0.1));
+    border: 1px solid #3b82f6;
+    color: #bfdbfe;
+}
+
+.info-card.blue {
+    background: linear-gradient(145deg, rgba(30, 64, 175, 0.2), rgba(30, 64, 175, 0.1));
+    border: 1px solid #3b82f6;
+    color: #bfdbfe;
+}
+
+/* Success Info */
+.success-info {
+    background: linear-gradient(145deg, rgba(6, 95, 70, 0.2), rgba(6, 95, 70, 0.1));
+    border: 1px solid #10b981;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.success-title {
+    color: #6ee7b7;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.success-info p {
+    color: #a7f3d0;
+    font-size: 0.875rem;
+    margin-bottom: 0.25rem;
+}
+
+.success-email {
+    color: #ecfdf5;
+    font-family: 'Courier New', monospace;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Check Icon */
+.check-icon {
+    width: 4rem;
+    height: 4rem;
+    background: linear-gradient(145deg, #10b981, #059669);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.4);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+.footer p {
+    margin-bottom: 0.25rem;
+}
+
+.footer-sub {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    font-style: italic;
+}
+
+/* Animations */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.05);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+    .container {
+        padding: 0.5rem;
+    }
+    
+    .payment-card {
+        padding: 1rem;
+    }
+    
+    .logo-x {
+        font-size: 3rem;
+    }
+    
+    .slogan {
+        font-size: 0.75rem;
+    }
+    
+    .sub-slogan {
+        font-size: 0.6875rem;
+    }
+}
+
+/* Additional Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.w-16 {
+    width: 4rem;
+}
+
+.h-16 {
+    height: 4rem;
+}
+
+.bg-red-600 {
+    background-color: #dc2626;
+}
+
+.rounded-full {
+    border-radius: 9999px;
+}
+
+.flex {
+    display: flex;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+.mb-2 {
+    margin-bottom: 0.5rem;
+}
+
+.text-xl {
+    font-size: 1.25rem;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.text-red-400 {
+    color: #f87171;
+}
+
+.text-gray-400 {
+    color: #9ca3af;
+}
+
+.bg-red-900\/30 {
+    background-color: rgba(127, 29, 29, 0.3);
+}
+
+.border-red-600 {
+    border-color: #dc2626;
+}
+
+.p-4 {
+    padding: 1rem;
+}
+
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+
+.text-red-200 {
+    color: #fecaca;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+}
+
+.bg-white {
+    background-color: #ffffff;
+}
+
+.text-black {
+    color: #000000;
+}
+
+.px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.rounded {
+    border-radius: 0.25rem;
+}
+
+.hover\:bg-gray-200:hover {
+    background-color: #e5e7eb;
+}
