@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XPay Bank Account Registration</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="form-container">
+    <div class="logo"><span class="x">X</span>Pay</div>
+    <h1>Bank Account Registration</h1>
+    <p class="subtitle">Streamlining your business expansion across districts</p>
+
+    <div class="success-message" id="successMessage">
+      Registration submitted successfully! You will receive a confirmation email shortly.
+    </div>
+
+    <form id="bankForm" onsubmit="handleSubmit(event)">
+      <!-- Bank Information -->
+      <div class="section-title">Bank Information</div>
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="bankName">Bank Name *</label>
+          <input type="text" id="bankName" name="bankName" placeholder="e.g., State Bank of India" required>
+        </div>
+
+        <div class="form-group">
+          <label for="accountNumber">Bank Account Number *</label>
+          <input type="text" id="accountNumber" name="accountNumber" placeholder="Account Number" required>
+        </div>
+        <div class="form-group">
+          <label for="accountName">Account Name *</label>
+          <input type="text" id="accountName" name="accountName" placeholder="Account Holder Name" required>
+        </div>
+        <div class="form-group">
+          <label for="ifscCode">IFSC Code *</label>
+          <input type="text" id="ifscCode" name="ifscCode" placeholder="e.g., SBIN0001234" required>
+        </div>
+      </div>
+
+      <!-- KYC Documents -->
+      <div class="section-title">KYC Documents</div>
+      <div class="form-group" style="grid-column: 1 / -1;">
+        <label for="kycDocuments">Upload KYC Documents</label>
+        <div class="file-drop-area" id="fileDropArea">
+          <input type="file" id="kycDocuments" name="kycDocuments" multiple accept="image/*,.pdf" style="display: none;">
+          <div class="drop-message">
+            <div style="font-size: 48px; color: #00d4ff; margin-bottom: 15px;">📁</div>
+            <div style="font-size: 16px; margin-bottom: 10px;">Drag & Drop your files here</div>
+            <div style="font-size: 14px; color: #888; margin-bottom: 15px;">or</div>
+            <button type="button" class="browse-btn" onclick="document.getElementById('kycDocuments').click()">Browse Files</button>
+            <div style="margin-top: 15px; font-size: 12px; color: #666;">
+              Supported formats: JPG, PNG, PDF | Max size per file: 10MB
+            </div>
+          </div>
+        </div>
+        <div id="fileList" class="file-list"></div>
+      </div>
+
+      <!-- Account Config -->
+      <div class="section-title">Account Configuration</div>
+      <div class="form-grid">
+        <div class="form-group" id="idCountGroup">
+          <label for="idCount">ID Count *</label>
+          <select id="idCount" name="idCount" onchange="updateFormFields()" required>
+            <option value="1" selected>1 ID</option>
+            <option value="2">2 IDs</option>
+            <option value="3">3 IDs</option>
+            <option value="4">4 IDs</option>
+            <option value="5">5 IDs</option>
+            <option value="6">6 IDs</option>
+            <option value="7">7 IDs</option>
+            <option value="8">8 IDs</option>
+            <option value="9">9 IDs</option>
+            <option value="10">10 IDs</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <div class="checkbox-group">
+            <input type="checkbox" id="checkerMaker" name="checkerMaker" onchange="updateFormFields()">
+            <label for="checkerMaker">Checker Maker Account</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Checker Maker Configuration -->
+      <div id="checkerMakerConfig" class="hidden">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="checkerCount">Number of Checker IDs *</label>
+            <select id="checkerCount" name="checkerCount" onchange="updateFormFields()">
+              <option value="">Select Checker Count</option>
+              <option value="1">1 Checker ID</option>
+              <option value="2">2 Checker IDs</option>
+              <option value="3">3 Checker IDs</option>
+              <option value="4">4 Checker IDs</option>
+              <option value="5">5 Checker IDs</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="makerCount">Number of Maker IDs *</label>
+            <select id="makerCount" name="makerCount" onchange="updateFormFields()">
+              <option value="">Select Maker Count</option>
+              <option value="1">1 Maker ID</option>
+              <option value="2">2 Maker IDs</option>
+              <option value="3">3 Maker IDs</option>
+              <option value="4">4 Maker IDs</option>
+              <option value="5">5 Maker IDs</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Transaction Options -->
+      <div class="transaction-options">
+        <div class="options-group">
+          <label class="options-label">Bulk:</label>
+          <div class="compact-options">
+            <div class="compact-option">
+              <input type="checkbox" id="noBulk" name="noBulk" onchange="handleBulkSelection('noBulk')">
+              <label for="noBulk"><span class="option-icon no">✗</span>No</label>
+            </div>
+            <div class="compact-option">
+              <input type="checkbox" id="bulk" name="bulk" onchange="handleBulkSelection('bulk')">
+              <label for="bulk"><span class="option-icon yes">✓</span>Yes</label>
+            </div>
+          </div>
+        </div>
+        
+        <div class="options-group">
+          <label class="options-label">CMS:</label>
+          <div class="compact-options">
+            <div class="compact-option">
+              <input type="checkbox" id="cmsNo" name="cmsNo" onchange="handleCMSSelection('cmsNo')">
+              <label for="cmsNo"><span class="option-icon no">✗</span>No</label>
+            </div>
+            <div class="compact-option">
+              <input type="checkbox" id="cmsYes" name="cmsYes" onchange="handleCMSSelection('cmsYes')">
+              <label for="cmsYes"><span class="option-icon yes">✓</span>Yes</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Information -->
+      <div class="section-title">Contact Information</div>
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="telegramId">Telegram ID</label>
+          <input type="text" id="telegramId" name="telegramId" placeholder="@username or phone number">
+        </div>
+        <div class="form-group">
+          <label for="whatsappNumber">WhatsApp Number</label>
+          <input type="tel" id="whatsappNumber" name="whatsappNumber" placeholder="+91XXXXXXXXXX">
+        </div>
+      </div>
+
+      <!-- Dynamic Section -->
+      <div id="loginCredentialsSection" class="dynamic-section"></div>
+
+      <button type="submit" class="submit-btn">Submit Registration</button>
+    </form>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
