@@ -3,7 +3,7 @@ let paymentStatus = 'pending'; // pending, verifying, approved
 let timeLeft = 1800; // 30 minutes in seconds
 let timerInterval = null;
 
-const walletAddress = "TMZsmxZhxJJjE9cytC4Yvtj4emo5Ybtpk";
+const walletAddress = "TMZsmxZhxJJjJE9cytC4Yvtj4emo5Ybtpk";
 
 // DOM elements
 const elements = {
